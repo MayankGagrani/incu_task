@@ -32,7 +32,12 @@ RSpec.describe IncuTaskLogic do
    end
 
    it 'returns exception for negative numbers' do
-        result = IncuTaskLogic.add("1,-2,3,-4,-6")
-        expect(result).to eq("negative numbers not allowed -2, -4, -6")
+      result = IncuTaskLogic.add("1,-2,3,-4,-6")
+      expect(result).to eq("negative numbers not allowed -2, -4, -6")
+    end
+
+    it 'returns sum for an \n string' do
+       result = IncuTaskLogic.add('2\n9,6\n8')
+       expect(result).to eq(25)
     end
 end
