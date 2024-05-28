@@ -45,4 +45,9 @@ RSpec.describe IncuTaskLogic do
        result = IncuTaskLogic.add('3,\n')
        expect(result).to eq('invalid')
      end
+
+     it 'returns sum of number for string and avoid //' do
+       result = IncuTaskLogic.add('//;\n1;2;4')
+       expect(result).to eq(7)
+     end
 end
