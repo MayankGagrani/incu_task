@@ -50,4 +50,9 @@ RSpec.describe IncuTaskLogic do
        result = IncuTaskLogic.add('//;\n1;2;4')
        expect(result).to eq(7)
      end
+
+     it 'returns sum of and not include number >1000' do
+       result = IncuTaskLogic.add('4,1001')
+       expect(result).to eq(4)
+     end
 end
