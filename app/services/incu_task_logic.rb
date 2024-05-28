@@ -8,7 +8,9 @@ class IncuTaskLogic
       num = numbers_string.split(',').map(&:to_i).select { |num| num < 0 }.join(", ")
       return "negative numbers not allowed #{num}"
     end
-    
+
+    num = numbers_string.gsub('\n', ",").split(',').map(&:to_i) if numbers_string.include?('\n') #sum of number when \n also present
+
 		num.sum
 	end
 end
