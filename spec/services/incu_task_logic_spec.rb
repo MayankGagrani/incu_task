@@ -60,4 +60,9 @@ RSpec.describe IncuTaskLogic do
        result = IncuTaskLogic.add('/[***]\n1***5***3')
        expect(result).to eq(9)
      end
+
+     it 'returns exception for negative numbers' do
+       result = IncuTaskLogic.add('1,-2\n,-3,\n')
+       expect(result).to eq("negative numbers not allowed -2, -3")
+     end
 end
