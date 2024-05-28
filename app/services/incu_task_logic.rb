@@ -14,6 +14,8 @@ class IncuTaskLogic
 
 		num = numbers_string.split("\;").map {|x| x[/\d+/]}.map(&:to_i) if numbers_string.start_with?("//") # code for delimeter
 
+		num = numbers_string.split("*").map {|x| x[/\d+/]}.map(&:to_i) if numbers_string.include?('*')
+
 		return "invalid" if numbers_string.split(',').include?('\n') #for invalid string
 
 		num.sum
