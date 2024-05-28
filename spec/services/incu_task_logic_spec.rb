@@ -55,4 +55,9 @@ RSpec.describe IncuTaskLogic do
        result = IncuTaskLogic.add('4,1001')
        expect(result).to eq(4)
      end
+
+     it 'returns sum for string contain *' do
+       result = IncuTaskLogic.add('/[***]\n1***5***3')
+       expect(result).to eq(9)
+     end
 end
