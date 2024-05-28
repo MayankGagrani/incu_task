@@ -15,4 +15,19 @@ RSpec.describe IncuTaskLogic do
        puts "returns 1 for an single string"
      end
 	end
+
+   it 'returns sum for an double string' do
+     result = IncuTaskLogic.add("0,5")
+     expect(result).to eq(5)
+   end
+
+   it 'returns sum for three string' do
+     result = IncuTaskLogic.add("2,1,6")
+     expect(result).to eq(9)
+   end
+
+   it 'returns sum for an four string' do
+     result = IncuTaskLogic.add("1,5,2,5")
+     expect(result).to eq(13)
+   end
 end
