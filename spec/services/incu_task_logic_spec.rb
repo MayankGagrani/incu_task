@@ -40,4 +40,9 @@ RSpec.describe IncuTaskLogic do
        result = IncuTaskLogic.add('2\n9,6\n8')
        expect(result).to eq(25)
     end
+
+    it 'returns invalid for an \n string' do
+       result = IncuTaskLogic.add('3,\n')
+       expect(result).to eq('invalid')
+     end
 end
