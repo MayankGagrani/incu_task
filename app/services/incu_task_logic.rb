@@ -11,6 +11,8 @@ class IncuTaskLogic
 
     num = numbers_string.gsub('\n', ",").split(',').map(&:to_i) if numbers_string.include?('\n') #sum of number when \n also present
 
+		return "invalid" if numbers_string.split(',').include?('\n') #for invalid string
+
 		num.sum
 	end
 end
